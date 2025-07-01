@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 8px solid white;
+  border-radius: 50%;
+  background: #222;
+}
+
+.numbers div {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: rotate(calc(30deg * var(--n))) translateY(-130px) rotate(calc(-30deg * var(--n)));
+  transform-origin: center;
+}
+
+/* Hands */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+}
+
+.hour {
+  width: 6px;
+  height: 70px;
+  background: #f4d03f;
+  animation: rotateHour 43200s linear infinite;
+}
+
+.minute {
+  width: 4px;
+  height: 100px;
+  background: #58d68d;
+  animation: rotateMinute 3600s linear infinite;
+}
+
+.second {
+  width: 2px;
+  height: 120px;
+  background: #ec7063;
+  animation: rotateSecond 60s linear infinite;
+}
+
+.center-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@keyframes rotateHour {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMinute {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateSecond {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
